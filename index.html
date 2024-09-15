@@ -192,14 +192,216 @@
     <p>Distribuidora de Mercadorias Nacionais © 2024. Todos os direitos reservados.</p>
 </footer>
 
-<!-- Imagem flutuante "Fale Conosco" -->
-<div class="floating-button">
-    <a href="#contato"><img src="fale_conosco.png" alt="Fale Conosco"></a>
-</div>
+<!-- Imagem flutuante "Fale Conosco" --><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entregou! - O melhor envio de todos!</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Staatliches&family=Quicksand:wght@300;400;500;600;700&display=swap');
 
-<!-- Imagem flutuante "Faça o cálculo de seu frete" -->
-<div class="floating-button" id="frete-floating">
-    <a href="#sobre"><img src="calcular_frete.png" alt="Calcular Frete"></a>
+        body {
+            margin: 0;
+            font-family: 'Quicksand', sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            background-color: #a834eb;
+            color: #ffffff;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            width: 50px;
+            height: 50px;
+            margin-right: 20px;
+        }
+
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #7e02d1;
+            color: #ffffff;
+            padding: 100px 20px;
+            text-align: center;
+            margin-top: 70px;
+        }
+
+        .hero h1 {
+            font-family: 'Staatliches', sans-serif;
+            font-size: 3rem;
+            border: 5px solid #000000; /* Borda preta ao redor do título */
+            padding: 10px;
+            display: inline-block;
+        }
+
+        .section {
+            padding: 50px 20px;
+            background-color: #8a41ba;
+            color: #ffffff;
+        }
+
+        .section h2 {
+            font-family: 'Staatliches', sans-serif;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .portfolio {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            flex: 1 1 calc(25% - 20px); /* Ajuste para 4 botões */
+            background-color: #fcdf1e;
+            color: #000000;
+            padding: 20px;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 15px;
+            background-color: #fae666;
+            color: #000000;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+        }
+
+        /* Estilo para as imagens flutuantes */
+        .floating-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            gap: 10px; /* Espaçamento entre as imagens flutuantes */
+        }
+
+        .floating-button img {
+            width: 60px;
+            height: 60px;
+            cursor: pointer;
+        }
+
+        /* Esconder a imagem quando o botão correspondente for visível */
+        #frete-floating.hidden {
+            display: none;
+        }
+    </style>
+    <script>
+        // Função para esconder a imagem flutuante quando o botão "Faça o cálculo de seu frete" estiver visível
+        window.onscroll = function() {
+            var freteButton = document.querySelector(".frete-button");
+            var freteFloating = document.getElementById("frete-floating");
+            var freteButtonPos = freteButton.getBoundingClientRect().top;
+            var windowHeight = window.innerHeight;
+
+            if (freteButtonPos <= windowHeight) {
+                freteFloating.classList.add("hidden");
+            } else {
+                freteFloating.classList.remove("hidden");
+            }
+        };
+    </script>
+</head>
+<body>
+
+<header>
+    <img src="#" alt="Logo" class="logo">
+    <nav>
+        <a href="#sobre">Quem Somos</a>
+        <a href="#valores">Nossos Valores</a>
+        <a href="#produtos">Produtos</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>Entregou!</h1>
+    <p>Entregas fáceis e rápidas? Com certeza! Pediu, Chegou!</p>
+</section>
+
+<section id="sobre" class="section">
+    <h2>Quem Somos</h2>
+    <div class="portfolio">
+        <div class="card">
+            <h3>Nossa História</h3>
+            <p>Descubra como começamos e nossa trajetória até aqui.</p>
+            <a href="#" class="btn">Saiba Mais</a>
+        </div>
+        <div class="card">
+            <h3>Missão</h3>
+            <p>Entenda nossa missão de entregar qualidade e confiança.</p>
+            <a href="#" class="btn">Saiba Mais</a>
+        </div>
+        <div class="card">
+            <h3>Visão</h3>
+            <p>Saiba como planejamos o futuro e o impacto que queremos causar.</p>
+            <a href="#" class="btn">Saiba Mais</a>
+        </div>
+        <div class="card">
+            <h3>Faça o cálculo de seu frete</h3>
+            <p>Saiba quanto irá investir para enviar.</p>
+            <a href="#" class="btn frete-button">Calcular Frete</a>
+        </div>
+    </div>
+</section>
+
+<section id="valores" class="section">
+    <h2>Nossos Valores</h2>
+    <p>Comprometimento, transparência e inovação são os pilares que guiam nossa empresa.</p>
+</section>
+
+<section id="produtos" class="section">
+    <h2>Produtos</h2>
+    <p>Explore nossa linha diversificada de produtos que atendem às suas necessidades.</p>
+    <a href="#" class="btn">Ver Produtos</a>
+</section>
+
+<footer>
+    <p>Distribuidora de Mercadorias Nacionais © 2024. Todos os direitos reservados.</p>
+</footer>
+
+<!-- Contêiner para as imagens flutuantes -->
+<div class="floating-container">
+    <!-- Imagem flutuante "Calcule seu frete" -->
+    <div class="floating-button" id="frete-floating">
+        <a href="#sobre"><img src="calcular_frete.png" alt="Calcular Frete"></a>
+    </div>
+    <!-- Imagem flutuante "Fale Conosco" -->
+    <div class="floating-button">
+        <a href="#contato"><img src="fale_conosco.png" alt="Fale Conosco"></a>
+    </div>
 </div>
 
 </body>
