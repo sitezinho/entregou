@@ -30,19 +30,19 @@
         .logo {
             width: 80px;
             height: 80px;
-            margin-right: 10px; /* Diminuindo o espaço entre a logo e os links */
+            margin-right: 10px; /* Espaço entre a logo e os links */
         }
 
         nav {
             display: flex;
-            gap: 10px; /* Links mais próximos do logo */
+            gap: 15px; /* Espaçamento ajustado entre os links */
         }
 
         nav a {
             color: #ffffff;
             text-decoration: none;
             font-weight: 600;
-            font-size: 16px; /* Tamanho do texto ajustado */
+            font-size: 16px;
         }
 
         .hero {
@@ -50,7 +50,7 @@
             color: #ffffff;
             padding: 100px 20px;
             text-align: center;
-            margin-top: 100px; /* Aumenta a margem superior para ajustar o conteúdo abaixo do cabeçalho */
+            margin-top: 100px;
         }
 
         .hero h1 {
@@ -101,6 +101,18 @@
             font-weight: 600;
         }
 
+        /* Adiciona um espaço abaixo dos botões amarelos para uma imagem */
+        .section-image {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .section-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
         /* Estilo para as imagens flutuantes */
         .floating-container {
             position: fixed;
@@ -130,6 +142,42 @@
         #frete-floating.hidden {
             display: none;
         }
+
+        /* Ajustes para dispositivos móveis */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav {
+                flex-wrap: wrap;
+                gap: 10px;
+                margin-top: 10px;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .card {
+                flex: 1 1 calc(50% - 20px); /* Ajusta para 2 colunas em telas menores */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .card {
+                flex: 1 1 100%; /* Ajusta para 1 coluna em telas muito pequenas */
+            }
+
+            nav a {
+                font-size: 14px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
     </style>
     <script>
         // Função para esconder a imagem flutuante quando o botão "Faça o cálculo de seu frete" estiver visível
@@ -155,7 +203,7 @@
         <a href="#sobre">Quem Somos</a>
         <a href="#valores">Nossos Valores</a>
         <a href="#produtos">Produtos</a>
-        <a href="#contato">Contato</a> <!-- Novo link de contato -->
+        <a href="#contato">Contato</a>
     </nav>
 </header>
 
@@ -188,6 +236,11 @@
             <a href="#" class="btn frete-button">Calcular Frete</a>
         </div>
     </div>
+
+    <!-- Espaço para uma imagem abaixo dos botões -->
+    <div class="section-image">
+        <img src="imagem.jpg" alt="Imagem de Frete">
+    </div>
 </section>
 
 <section id="valores" class="section">
@@ -216,18 +269,5 @@
     <!-- Imagem flutuante "Calcule seu frete" -->
     <div class="floating-button" id="frete-floating">
         <a href="#sobre">
-            <img src="calculadora.png" alt="Calcular Frete">
-            <span>Calcular Frete</span>
-        </a>
-    </div>
-    <!-- Imagem flutuante "Fale Conosco" -->
-    <div class="floating-button">
-        <a href="#contato">
-            <img src="faleconosco.png" alt="Fale Conosco">
-            <span>Fale Conosco</span>
-        </a>
-    </div>
-</div>
-
-</body>
-</html>
+            <img
+                
